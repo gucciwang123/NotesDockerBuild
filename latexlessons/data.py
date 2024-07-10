@@ -3,6 +3,7 @@ import json
 f = open("data.json", "r")
 
 datas=json.load(f)
+f.close()
 
 files={
     "misc": []
@@ -17,7 +18,6 @@ for data in datas:
     else:
         files[data["number"]][data["type"]] = data["file"]
 
-f = open("/out/data/precalculus.json","w")
-json.dump(files, f)
-
-f.close()
+fp = open("/out/data/precalculus.json","w")
+json.dump(files, fp)
+fp.close()
