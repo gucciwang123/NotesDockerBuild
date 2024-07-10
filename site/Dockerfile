@@ -7,8 +7,8 @@ WORKDIR /app
 RUN touch Gemfile.lock
 RUN chmod a+w Gemfile.lock
 
-ADD _build.sh /app
+ADD build.sh /app
 
 VOLUME /out
 
-ENTRYPOINT ./_build.sh
+ENTRYPOINT ./build.sh
