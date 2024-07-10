@@ -4,8 +4,8 @@ RUN gem install jekyll bundler
 
 WORKDIR /app
 
-RUN touch Gemfile.lock
-RUN chmod a+w Gemfile.lock
+RUN touch src/Gemfile.lock
+RUN chmod a+w src/Gemfile.lock
 
 ADD build.sh /app
 
