@@ -2,7 +2,7 @@ cd src
 
 export JEKYLL_ENV="production"
 
-cp -r /out/Precalculus .
+mv /out/* .
 bundle install
 
 bundle exec jekyll build -d /out
