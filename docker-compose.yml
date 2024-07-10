@@ -1,0 +1,7 @@
+services:
+  latexlessons:
+    build: latexlessons
+    image: gucciwang123/notes-build:latex
+  site:
+    build: site
+    image: gucciwang123/notes-build:site
