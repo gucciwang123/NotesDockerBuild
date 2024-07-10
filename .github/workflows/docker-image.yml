@@ -1,0 +1,25 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build the Docker image
+      run: docker compose build --no-cache
+    - name: Autenticate Docker
+      env:
+        SECRET: ${{ secrets.DOCKER_PASSWD }}
+      run: docker login -u gucciwang123 -p $SECRET
+    - name: Push Images
+      run: docker compose push
