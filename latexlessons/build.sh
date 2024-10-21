@@ -1,4 +1,4 @@
-mkdir -p /out/Precalculus
+mkdir -p /out/$CLASS
 mkdir -p /out/data
 
 rm data.json
@@ -16,7 +16,7 @@ do
 
 	pdflatex $i
 	pdflatex $i
-	mv *.pdf /out/Precalculus
+	mv *.pdf /out/$CLASS
 done
 
 truncate -s-2 data.json
